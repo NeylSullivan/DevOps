@@ -1,7 +1,14 @@
 """
 Simple `README.md` generator. Scan and parse `*.bat` and `*.py` files, get first comment in file and generate Markdown text.
-Text will be inserted between `<!-- AUTO_GENERATED_CONTENT_START -->` and `<!-- AUTO_GENERATED_CONTENT_END -->` comments
-or will be appended to the end of existing (or new) `README.md` file.
+Text will be inserted between
+
+`<!-- AUTO_GENERATED_CONTENT_START -->`
+
+and
+
+`<!-- AUTO_GENERATED_CONTENT_END -->`
+
+comments or will be appended to the end of existing (or new) `README.md` file.
 
 For `*.bat` get header comment block (started with `::`)
 
@@ -147,7 +154,7 @@ def generate_markdown_table_of_contents(dir_content, depth=0):
 
         elif isinstance(item, ScriptItem):
             anchor = f'{item.relative_file_path}'.lower()
-            anchor = anchor.replace('.', '').replace('_', '').replace('\\', '').replace(' ', '-')
+            anchor = anchor.replace('.', '').replace('\\', '').replace(' ', '-')  # Removed '_' stripping for GitHub Markdown compatibility
             table_of_contents += f'{"  " * depth}- [{item.file_name}](#{anchor})\n'
 
     if depth == 0:
@@ -183,9 +190,9 @@ def sanitize_file_content(file_content):
             start_tag_line_idx = idx
             continue
 
-        # Don't stop, check to the end
         if lines[idx].startswith(TAG_AUTO_GENERATED_CONTENT_END):
             end_tag_line_idx = idx
+            # Don't break, check to the end
 
     if start_tag_line_idx != -1 and end_tag_line_idx != -1 and start_tag_line_idx < end_tag_line_idx:
         for idx in range(start_tag_line_idx + 1, end_tag_line_idx):
@@ -226,6 +233,8 @@ def main():
         file = open(readme_file_path, 'r')
         file_content = file.read()
         file.close()
+    else:
+        print('(New)')
 
     file_content = sanitize_file_content(file_content)
 
@@ -245,7 +254,7 @@ def main():
         file_content += markdown_string
 
     file = open(readme_file_path, 'w+')
-    file.write(file_content)  # directly write to file
+    file.write(file_content)
     file.close()
     print('\nFinished\n')
 
@@ -260,7 +269,6 @@ if __name__ == '__main__':
         print(f'Overriding root scan dir to: {args.dir}')
         ROOT_SCAN_DIR = args.dir
 
-    print(args.toc)
     GENERATE_TOC = args.toc
 
     main()

@@ -7,22 +7,22 @@ A small collection of batch scripts to automate some Unreal Engine 5 project dev
 ## Table of Contents
 - Core
   - [config.bat](#coreconfigbat)
-  - [config_archiver.bat](#coreconfigarchiverbat)
-  - [generate_readme.bat](#coregeneratereadmebat)
-  - [generate_readme.py](#coregeneratereadmepy)
+  - [config_archiver.bat](#coreconfig_archiverbat)
+  - [generate_readme.bat](#coregenerate_readmebat)
+  - [generate_readme.py](#coregenerate_readmepy)
   - [utils.bat](#coreutilsbat)
 - Standalone
-  - [standalone_resave_and_generate_DDC.bat](#standalonestandaloneresaveandgenerateddcbat)
-- [backup_code.bat](#backupcodebat)
-- [backup_from_gitignore.bat](#backupfromgitignorebat)
-- [build_solution_development_editor.bat](#buildsolutiondevelopmenteditorbat)
-- [clean_intermediate_files.bat](#cleanintermediatefilesbat)
-- [cook_game.bat](#cookgamebat)
-- [generate_vs_project_files.bat](#generatevsprojectfilesbat)
-- [rebuild_python_stub.bat](#rebuildpythonstubbat)
-- [rebuild_solution_development_editor.bat](#rebuildsolutiondevelopmenteditorbat)
-- [rebuild_solution_game_shipping.bat](#rebuildsolutiongameshippingbat)
-- [resave_and_generate_DDC.bat](#resaveandgenerateddcbat)
+  - [standalone_resave_and_generate_DDC.bat](#standalonestandalone_resave_and_generate_ddcbat)
+- [backup_code.bat](#backup_codebat)
+- [backup_from_gitignore.bat](#backup_from_gitignorebat)
+- [build_solution_development_editor.bat](#build_solution_development_editorbat)
+- [clean_intermediate_files.bat](#clean_intermediate_filesbat)
+- [cook_game.bat](#cook_gamebat)
+- [generate_vs_project_files.bat](#generate_vs_project_filesbat)
+- [rebuild_python_stub.bat](#rebuild_python_stubbat)
+- [rebuild_solution_development_editor.bat](#rebuild_solution_development_editorbat)
+- [rebuild_solution_game_shipping.bat](#rebuild_solution_game_shippingbat)
+- [resave_and_generate_DDC.bat](#resave_and_generate_ddcbat)
 ---
 ### Core\config.bat
 Core file executed by every script.
@@ -52,8 +52,15 @@ otherwise launch `generate_readme.py` without any arguments (in default mode wil
 ---
 ### Core\generate_readme.py
 Simple `README.md` generator. Scan and parse `*.bat` and `*.py` files, get first comment in file and generate Markdown text.
-Text will be inserted between `<!-- AUTO_GENERATED_CONTENT_START -->` and `<!-- AUTO_GENERATED_CONTENT_END -->` comments
-or will be appended to the end of existing (or new) `README.md` file.
+Text will be inserted between
+
+`<!-- AUTO_GENERATED_CONTENT_START -->`
+
+and
+
+`<!-- AUTO_GENERATED_CONTENT_END -->`
+
+comments or will be appended to the end of existing (or new) `README.md` file.
 
 For `*.bat` get header comment block (started with `::`)
 
