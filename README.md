@@ -1,7 +1,8 @@
-## DevOps
-A small collection of batch scripts to automate some Unreal Engine 5 project development operations: cleaning, building, packaging, backing up etc.
+# DevOps
+Batch scripts to automate some Unreal Engine 5 project development operations: cleaning, building, packaging, backing up etc.
 
-`DevOps` directory should be placed to the root project directory.
+## Instalation
+Place `DevOps` directory under the root project directory.
 
 <!-- AUTO_GENERATED_CONTENT_START -->
 ## Table of Contents
@@ -12,6 +13,7 @@ A small collection of batch scripts to automate some Unreal Engine 5 project dev
   - [generate_readme.py](#coregenerate_readmepy)
   - [utils.bat](#coreutilsbat)
 - Standalone
+  - [simple_backup.bat](#standalonesimple_backupbat)
   - [standalone_resave_and_generate_DDC.bat](#standalonestandalone_resave_and_generate_ddcbat)
 - [backup_code.bat](#backup_codebat)
 - [backup_from_gitignore.bat](#backup_from_gitignorebat)
@@ -72,6 +74,21 @@ CLI options:
 ---
 ### Core\utils.bat
 Collection of utility functions to display messages to terminal
+
+---
+### Standalone\simple_backup.bat
+Simple standalone backup script. Archive file or folder provided as argument to 'BACKUPS' subdir.
+Based on https://gist.github.com/adamcaudill/2322221
+
+Installation:
+
+- Windows+R
+- `shell:sendto` to open `SendTo` directory
+- Create shortcut to `simple_backup.bat` in `SendTo` directory
+
+Using:
+- Right click on file or folder and select `Send to - Simple Backup`
+
 
 ---
 ### Standalone\standalone_resave_and_generate_DDC.bat
