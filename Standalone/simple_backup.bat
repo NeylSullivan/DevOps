@@ -11,7 +11,7 @@
 :: - Right click on file or folder and select `Send to - Simple Backup`
 ::
 
-@echo on
+@echo off
 
 set ArchiverExePath="%ProgramFiles(x86)%\7-Zip\7z.exe"
 if not exist %ArchiverExePath% set ArchiverExePath="%ProgramFiles%\7-Zip\7z.exe"
