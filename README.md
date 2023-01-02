@@ -25,6 +25,7 @@ Place `DevOps` directory under the root project directory.
 - [rebuild_solution_development_editor.bat](#rebuild_solution_development_editorbat)
 - [rebuild_solution_game_shipping.bat](#rebuild_solution_game_shippingbat)
 - [resave_and_generate_DDC.bat](#resave_and_generate_ddcbat)
+- [validate_assets.bat](#validate_assetsbat)
 ---
 ### Core\config.bat
 Core file executed by every script.
@@ -182,6 +183,10 @@ Rebuild solution for shipping
 ---
 ### resave_and_generate_DDC.bat
 Resave current project packages, fix redirectors, generate DerivedDataCache
+
+---
+### validate_assets.bat
+Perform command line assetd validation
 
 ---
 <!-- AUTO_GENERATED_CONTENT_END -->

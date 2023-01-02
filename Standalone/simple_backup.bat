@@ -31,7 +31,10 @@ set SOURCE=%~1
 set BACKUP_FILE=%~dp1\BACKUPS\%~n1_Backup.%datetime%.7z
 
 echo.
-call :echo_green "Backing up '%SOURCE%' to '%BACKUP_FILE%'"
+echo Backing up
+call :echo_green "%SOURCE%"
+echo to
+call :echo_green "%BACKUP_FILE%"
 echo.
 
 call %ArchiverExePath% a -t7z "%BACKUP_FILE%" "%SOURCE%"
@@ -39,7 +42,12 @@ call %ArchiverExePath% a -t7z "%BACKUP_FILE%" "%SOURCE%"
 if NOT %errorlevel% == 0 goto :error %errorlevel%
 echo.
 
-call :echo_green "'%SOURCE%' backed up to '%BACKUP_FILE%' is complete!"
+echo.
+call :echo_green "Finished."
+call :echo_green "%SOURCE%"
+echo backed up to
+call :echo_green "%BACKUP_FILE%"
+call :sound_success
 goto end
 
 :sound_success

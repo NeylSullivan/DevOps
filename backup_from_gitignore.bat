@@ -42,8 +42,6 @@ call %ArchiverExePath% u "%BACKUP_FILE%" Content\ ^
 -i!Plugins\*\Config\ ^
 -i!Plugins\*\Content\
 
-
-
 if NOT %errorlevel% == 0 goto :error
 echo. 
 call %UTILS_PATH% echo_green "%PROJECT_ROOT_PATH% backed up to %BACKUP_FILE% is complete!"
