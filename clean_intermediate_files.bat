@@ -11,8 +11,10 @@
 :: - Build
 :: - DerivedDataCache
 :: - Intermediate
+:: - Saved\\Automation
 :: - Saved\\Autosaves
 :: - Saved\\Cooked
+:: - Saved\\Crashes
 :: - Saved\\Logs
 :: - Saved\\MaterialStats
 :: - Saved\\MaterialStatsDebug
@@ -77,8 +79,10 @@ Binaries ^
 Build ^
 DerivedDataCache ^
 Intermediate ^
+Saved\Automation ^
 Saved\Autosaves ^
 Saved\Cooked ^
+Saved\Crashes ^
 Saved\Logs ^
 Saved\MaterialStats ^
 Saved\MaterialStatsDebug ^

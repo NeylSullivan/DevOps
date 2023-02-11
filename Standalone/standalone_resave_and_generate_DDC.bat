@@ -1,5 +1,5 @@
 :: Place in project root dir and run to resave packages and generate DerivedDataCache for project.
-:: Help to speed up first launch of large project (City Sample, Lyra etc.)
+:: Help to speed up first (or after engine version update) launch  of large project (City Sample, Lyra etc.)
 ::
 :: - ***Note: unrealcmdpath is hardcoded, don't forget update it with correct engine path/version***
 

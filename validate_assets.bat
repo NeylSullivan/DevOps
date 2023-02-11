@@ -1,4 +1,4 @@
-:: Perform command line assetd validation
+:: Perform command line assets validation
 
 call "%~dp0\Core\config.bat"
 
